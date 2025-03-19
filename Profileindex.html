@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমার প্রোফাইল</title>
+    <style>
+        /* পুরো পেজের ব্যাকগ্রাউন্ড */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: black;
+            position: relative;
+        }
+
+        /* ব্যাকগ্রাউন্ডে লাভ ও কালো ইফেক্ট */
+        @keyframes floating {
+            0% { transform: translateY(0); opacity: 0.3; }
+            50% { transform: translateY(-20px); opacity: 0.7; }
+            100% { transform: translateY(0); opacity: 0.3; }
+        }
+
+        .background-effects {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .heart, .black-smoke {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-size: cover;
+            opacity: 0.3;
+            animation: floating 3s infinite ease-in-out;
+        }
+
+        .heart { background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/28/Red_heart.png'); }
+        .black-smoke { background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/dc/Smoke_1.png'); width: 70px; height: 70px; }
+
+        /* প্রোফাইল কার্ড */
+        .profile-container {
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+        }
+
+        /* সোশ্যাল মিডিয়া বাটন */
+        .social-buttons {
+            margin-top: 20px;
+        }
+
+        .social-buttons a {
+            display: block;
+            margin: 10px auto;
+            padding: 12px;
+            width: 85%;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            position: relative;
+            transition: 0.3s ease-in-out;
+        }
+
+        /* এনিমেশন ও ইউনিক স্টাইল */
+        .social-buttons a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50px;
+            z-index: -1;
+            transition: 0.4s ease-in-out;
+        }
+
+        .social-buttons a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .whatsapp { background: #25D366; }
+        .whatsapp::before { background: #1da851; }
+
+        .youtube { background: #FF0000; }
+        .youtube::before { background: #cc0000; }
+
+        .telegram { background: #0088cc; }
+        .telegram::before { background: #0077aa; }
+
+        .facebook { background: #1877F2; }
+        .facebook::before { background: #1056A3; }
+
+        .twitter { background: #1DA1F2; }
+        .twitter::before { background: #0e81c9; }
+
+    </style>
+</head>
+<body>
+
+    <!-- ব্যাকগ্রাউন্ড লাভ ও কালো ইফেক্ট -->
+    <div class="background-effects">
+        <div class="heart" style="top: 10%; left: 20%;"></div>
+        <div class="heart" style="top: 50%; left: 80%;"></div>
+        <div class="heart" style="top: 80%; left: 40%;"></div>
+        <div class="black-smoke" style="top: 30%; left: 10%;"></div>
+        <div class="black-smoke" style="top: 70%; left: 70%;"></div>
+    </div>
+
+    <!-- প্রোফাইল কার্ড -->
+    <div class="profile-container">
+        <img id="profile-pic" src="https://your-image-link.com/your-profile.jpg" alt="আমার ছবি" class="profile-pic">
+        
+        <div class="social-buttons">
+            <a href="https://wa.me/8801796549955" target="_blank" class="whatsapp">WhatsApp</a>
+            <a href="https://www.youtube.com/@YourChannel" target="_blank" class="youtube">YouTube</a>
+            <a href="https://t.me/mdnahid44" target="_blank" class="telegram">Telegram</a>
+            <a href="https://www.facebook.com/YourProfile" target="_blank" class="facebook">Facebook</a>
+            <a href="https://twitter.com/YourTwitter" target="_blank" class="twitter">Twitter</a>
+            
+        </div>
+    </div>
+
+</body>
+</html>
